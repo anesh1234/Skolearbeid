@@ -11,7 +11,7 @@ def pollard_rho(n, k):
     h = t
     d = 1
 
-    # Forming the "Rho"-sequence using the polynomial function and finding GCD
+    # Forming the "Rho"-like-sequence using the polynomial function and finding GCD for each iteration
     while d == 1:
         t = g(t)
         h = g(g(h))
@@ -22,7 +22,8 @@ def pollard_rho(n, k):
         return pollard_rho(n, k + 1)
 
     # A factor has been found, returnig the factor
-    return d
+    else:
+        return d
 
 # Using the Algorithm:
 p1 = 123456789
