@@ -1,10 +1,10 @@
 import math
 import random
 
-def pollard_rho(n):
+def pollard_rho(n, k):
 
     # The polynomial function g(x)
-    def g(x, k):
+    def g(x):
         return (x**2 + 1) % n
     
     # Setting the start values
