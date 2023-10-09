@@ -18,9 +18,9 @@ def prime_test(n, k):
         d //= 2                         # Divide the multiplier and drop the remainder
 
     # Perform testing rounds
-    for _ in range(k):
+    for _ in range(k):                          # This loop will run k times
 
-        a = random.randint(2, n - 2)            # Generate a random integer from 2 to n-2 inclusive
+        a = random.randint(2, n - 2)            # Generate a random integer from 2 to n-2 inclusive, because n will always be a probable prime for base 1 and n - 1.
         x = pow(a, d, n)                        # The pow(a,b,c)-function generates the expression a^b mod c
         y = 0
 
