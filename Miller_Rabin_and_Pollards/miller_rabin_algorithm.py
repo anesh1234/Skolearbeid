@@ -9,7 +9,7 @@ def miller_rabin(b, k):
             if prime_test(randint, k):                      # Run the miller-rabin test for the found number
                 et = time.time()
                 elapsed_time = et - st
-                return randint, elapsed_time                # Return the 512-bit number if it is a probable prime
+                return randint, elapsed_time                # Return the 512-bit number if it is a probable prime and the time it took to find it
 
 def prime_test(n, k):
 

@@ -1,13 +1,12 @@
 import miller_rabin_algorithm as miller
 import pollards_rho_algorithm as pollard
-import math
 
 # Finding a 512 bit number and testing its primality
 b = 512
 k = 30
 p1, p1Time = miller.miller_rabin(b, k)
 
-# Finding a seccond number while ensuring that the two numbers are not the same
+# Finding a second number while ensuring that the two numbers are not the same
 while True:
     p2, p2Time = miller.miller_rabin(b, k)
     if p1 != p2:
@@ -19,12 +18,11 @@ class factor:
     def __init__(self, x):
         self.prime = x
         self.part = int((x-1)/2)
-        self.ntFactor, self.eTime = pollard.pollard_rho(self.part, 2)
-        self.factor_q = 0
+        self.ntFactor, self.eTime = pollard.pollard_rho(self.part, 2)    #Running the factorization
+        self.factor_q = self.part / self.ntFactor                      # Calculates the other factor, q
 
-    def checkBasic(self):
-        self.factor_q = self.part // self.ntFactor          # Calculates the other factor, q
-        if (self.ntFactor * self.factor_q) == self.part:    # Verifying the result of the factorization
+    def checkBasic(self):                         # Verifying the result of the factorization    
+        if (self.ntFactor * self.factor_q) == self.part:
             return True
         return False
     
@@ -33,7 +31,7 @@ class factor:
             return True
         return False
 
-pollard1 = factor(p1)
+pollard1 = factor(p1)    
 pollard2 = factor(p2)
 
 

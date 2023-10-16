@@ -16,9 +16,10 @@ def pollard_rho(n, k):
         h = g(g(h))
         d = math.gcd(abs(t - h), n)        # Finding the GCD
 
+    et = time.time()            # Set end time
+    elapsed_time = et - st      # Calculate elapsed time
+
     if d == n:
-        return 0     # The algorithm failed to find a non-trivial factor
+        return 0, elapsed_time    # The algorithm failed to find a non-trivial factor
     else:
-        et = time.time()           # Set end time
-        elapsed_time = et - st     # Calculate elapsed time
         return d, elapsed_time     # A non-trivial factor d has been found and is returned, along with the elapsed time
