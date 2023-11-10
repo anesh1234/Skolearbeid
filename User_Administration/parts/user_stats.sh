@@ -1,4 +1,4 @@
-#! usr/bin/bash
+#! /bin/bash
 
 user_stats() {
 # Get the current date and calculate the start of the week and month
@@ -12,7 +12,7 @@ start_of_year=$(date -d "$current_date - $(date +%j) days + 1 day" +'%Y-%m-%d')
 
 echo "$current_date, $start_of_week, $start_of_month, $start_of_year"
 
-# Get the number of users in the system-works
+# Get the number of users in the system
 num_users=$(sudo cat /etc/passwd | wc -l)
 
 # Print the report header
