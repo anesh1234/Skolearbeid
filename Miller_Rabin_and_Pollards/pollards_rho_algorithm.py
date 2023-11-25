@@ -16,6 +16,11 @@ def pollard_rho(n, k):
         h = g(g(h))
         d = math.gcd(abs(t - h), n)        # Finding the GCD
 
+        et = time.time()            # Set end time
+        elapsed_time = et - st      # Calculate elapsed time
+        if elapsed_time >= 30:
+            return 0, print("Pollards Timeout: The number is perhaps a prime")
+
     et = time.time()            # Set end time
     elapsed_time = et - st      # Calculate elapsed time
 
